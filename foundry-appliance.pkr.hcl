@@ -3,6 +3,7 @@ source "virtualbox-iso" "foundry-appliance" {
   boot_wait            = "5s"
   cpus                 = "${local.cpus}"
   disk_size            = "${local.disk_size}"
+  format               = "ova"
   gfx_controller       = "vmsvga"
   guest_os_type        = "Ubuntu_64"
   hard_drive_interface = "scsi"
