@@ -1,0 +1,19 @@
+name: build-ova
+
+on: [push]
+
+jobs:
+  build-ova:
+    runs-on: macos-10.15
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Packer cache
+      uses: actions/cache@v2
+      with:
+        path: packer_cache
+        key: ${{ runner.os }}-packer
+
+    - name: Build OVA image
+      run: ./build-appliance virtualbox 
